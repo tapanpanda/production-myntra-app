@@ -66,7 +66,7 @@ app.use(express.json()); //This middleware is built-in and simplifies the proces
 //app.use(morgan("dev")); //HTTP request Logger
 
 //static files access
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.use(express.static(path.join(__dirname, "./frontend/dist")));
 
 // Use the custom format in morgan middleware
 app.use(morgan(customFormat));
@@ -81,7 +81,7 @@ app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
 app.get("*", function (req, res) {
-  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+  res.sendFile(path.join(__dirname, "./frontend/dist/index.html"));
 });
 
 // app.get("/", (req, res) => {
